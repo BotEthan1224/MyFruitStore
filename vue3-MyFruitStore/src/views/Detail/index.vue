@@ -2,6 +2,8 @@
 import { getDetail } from '@/apis/detail'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import DetailHot from './components/DetailHot.vue'
+
 
 const goods = ref({})
 const route = useRoute()
@@ -38,33 +40,33 @@ onMounted(() => getGoods())
               <ul class="goods-sales">
                 <li>
                   <p>销量人气</p>
-                  <p> {{goods.salesCount}}+ </p>
+                  <p> {{ goods.salesCount }}+ </p>
                   <p><i class="iconfont icon-task-filling"></i>销量人气</p>
                 </li>
                 <li>
                   <p>商品评价</p>
-                  <p>{{goods.commentCount}}+</p>
+                  <p>{{ goods.commentCount }}+</p>
                   <p><i class="iconfont icon-comment-filling"></i>查看评价</p>
                 </li>
                 <li>
                   <p>收藏人气</p>
-                  <p>{{goods.collectCount}}+</p>
+                  <p>{{ goods.collectCount }}+</p>
                   <p><i class="iconfont icon-favorite-filling"></i>收藏商品</p>
                 </li>
                 <li>
                   <p>品牌信息</p>
-                  <p>{{goods.brand.name}}</p>
+                  <p>{{ goods.brand.name }}</p>
                   <p><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>
                 </li>
               </ul>
             </div>
             <div class="spec">
               <!-- 商品信息区 -->
-              <p class="g-name"> {{goods.name}} </p>
-              <p class="g-desc">{{goods.desc}} </p>
+              <p class="g-name"> {{ goods.name }} </p>
+              <p class="g-desc">{{ goods.desc }} </p>
               <p class="g-price">
-                <span>{{goods.oldPrice}}</span>
-                <span> {{goods.price}}</span>
+                <span>{{ goods.oldPrice }}</span>
+                <span> {{ goods.price }}</span>
               </p>
               <div class="g-service">
                 <dl>
@@ -105,8 +107,8 @@ onMounted(() => getGoods())
                   <!-- 属性 -->
                   <ul class="attrs">
                     <li v-for="item in goods.details.properties" :key="item.value">
-                      <span class="dt">{{item.name}}</span>
-                      <span class="dd">{{item.value}}</span>
+                      <span class="dt">{{ item.name }}</span>
+                      <span class="dd">{{ item.value }}</span>
                     </li>
                   </ul>
                   <!-- 图片 -->
@@ -116,7 +118,10 @@ onMounted(() => getGoods())
             </div>
             <!-- 24热榜+专题推荐 -->
             <div class="goods-aside">
-
+              <!-- 24 -->
+              <DetailHot :hot-type="1" />
+              <!-- 周 -->
+              <DetailHot :hot-type="2" />
             </div>
           </div>
         </div>
