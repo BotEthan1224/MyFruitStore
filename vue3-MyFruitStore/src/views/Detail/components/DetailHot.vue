@@ -66,7 +66,7 @@ onMounted(() => {
         background: #fff;
 
         img {
-            width: 400px;
+            width: 180px;
             height: 160px;
         }
 
