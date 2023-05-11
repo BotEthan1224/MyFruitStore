@@ -2,17 +2,23 @@
 import { getCategoryAPI } from '@/apis/category'
 import { getBannerAPI } from '@/apis/home'
 import { onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 import GoodsItem from '../Home/components/GoodsItem.vue'
 
 const categoryData = ref({})
 const route = useRoute()
-const getCategory = async () => {
-    const res = await getCategoryAPI(route.params.id)
+const getCategory = async (id = route.params.id) => {
+    const res = await getCategoryAPI(id)
     categoryData.value = res.result
 }
-
 onMounted(() => getCategory())
+
+//路由参数变化时，分类数据接口重新发送
+onBeforeRouteUpdate((to)=>{
+    getCategory(to.params.id)
+})
+
+
 //获取banner
 const bannerList = ref([])
 const getBanner = async () => {
@@ -148,15 +154,14 @@ onMounted(() => {
     }
 
     .bread-container {
-        padding: 25px 0;
+        padding:25px 0 25px 0;
     }
 }
 
 .home-banner {
     width: 1240px;
     height: 500px;
-    margin: 0 auto;
-
+    margin: 25px auto;
     img {
         width: 100%;
         height: 500px;
