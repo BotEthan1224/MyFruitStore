@@ -1,0 +1,3 @@
+<template>
+    woshi hot
+</template>
