@@ -19,7 +19,6 @@ onMounted(() => {
   <LayoutFixed />
   <LayoutNav />
   <LayoutHeader />
-  <!-- 添加key破坏复用机制 -->
   <RouterView />
   <LayoutFooter />
 </template>
