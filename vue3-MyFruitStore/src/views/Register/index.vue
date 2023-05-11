@@ -21,7 +21,7 @@
     <section class="login-section">
       <div class="wrapper">
         <nav>
-          <a href="javascript:;">账户登录</a>
+          <a href="javascript:;">账户注册</a>
         </nav>
         <div class="account-box">
           <div class="form">
@@ -38,9 +38,9 @@
                   我已同意隐私条款和服务条款
                 </el-checkbox>
               </el-form-item>
-              <el-button size="large" class="subBtn">点击登录</el-button>
+              <el-button size="large" class="subBtn">点击注册</el-button>
               <br>
-              <el-button size="large" class="subBtn" @click="$router.push('/register')">没有账号？点击注册</el-button>
+              <el-button size="large" class="subBtn" @click="$router.push('/login')">已有账号？点击登录</el-button>
             </el-form>
           </div>
         </div>
