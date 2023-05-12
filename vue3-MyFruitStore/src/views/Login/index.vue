@@ -9,8 +9,8 @@ const router = useRouter()
 const userStore = useUserStore()
 // 表单数据对象
 const form = ref({
-  account: '',
-  password: '',
+  account: '123',
+  password: '123456',
   agree:true
 })
 const rules = {
