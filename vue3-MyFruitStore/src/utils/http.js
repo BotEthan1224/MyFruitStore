@@ -1,5 +1,8 @@
 //基于axios基础的封装
 import axios from 'axios'
+import { ElMessage } from 'element-plus'
+import 'element-plus/theme-chalk/el-message.css'
+
 const httpInstance = axios.create({
     //记得设置基地址
     baseURL: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
@@ -14,6 +17,10 @@ httpInstance.interceptors.request.use(config => {
 
 // axios响应式拦截器
 httpInstance.interceptors.response.use(res => res.data, e => {
+    ElMessage({
+        type: 'warning',
+        message: e.response.data.message
+    })
     return Promise.reject(e)
 })
 
