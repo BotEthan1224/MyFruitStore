@@ -8,7 +8,7 @@ import Detail from '@/views/Detail/index.vue'
 import Register from'@/views/Register/index.vue'
 import ManageLogin from '@/views/ManageLogin/index.vue'
 import Manage from '@/views/Manage/index.vue'
-
+import CartList from '@/views/CartList/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +35,10 @@ const router = createRouter({
         {
           path:'detail/:id',
           component:Detail
+        },
+        {
+          path:'cartlist',
+          component:CartList
         }
       ]
     },
