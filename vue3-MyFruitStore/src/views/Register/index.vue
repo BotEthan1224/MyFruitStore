@@ -21,13 +21,19 @@
     <section class="login-section">
       <div class="wrapper">
         <nav>
-          <a href="javascript:;">账户注册</a>
+          <a href="javascript:;">欢迎注册</a>
         </nav>
         <div class="account-box">
           <div class="form">
             <el-form label-position="right" label-width="60px"
               status-icon>
               <el-form-item  label="账户">
+                <el-input/>
+              </el-form-item>
+                <el-form-item  label="账户">
+                <el-input/>
+              </el-form-item>
+                <el-form-item  label="账户">
                 <el-input/>
               </el-form-item>
               <el-form-item label="密码">
@@ -119,7 +125,7 @@
     background: #fff;
     position: absolute;
     left: 50%;
-    top: 54px;
+    top: 30px;
     transform: translate3d(100px, 0, 0);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
