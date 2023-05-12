@@ -1,6 +1,6 @@
 <script setup>
 //home页的分类组件
-import { useCategoryStore } from '@/stores/category'
+import { useCategoryStore } from '@/stores/categoryStore'
 
 const categoryStore = useCategoryStore()
 
