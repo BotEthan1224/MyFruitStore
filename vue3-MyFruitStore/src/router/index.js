@@ -6,6 +6,8 @@ import Category from '@/views/Category/index.vue'
 import SubCategory from '@/views/SubCategory/index.vue'
 import Detail from '@/views/Detail/index.vue'
 import Register from'@/views/Register/index.vue'
+import ManageLogin from '@/views/ManageLogin/index.vue'
+import Manage from '@/views/Manage/index.vue'
 
 
 const router = createRouter({
@@ -43,6 +45,14 @@ const router = createRouter({
     {
       path: '/register',
       component: Register
+    },
+    {
+      path: '/manageLogin',
+      component: ManageLogin
+    },
+    {
+      path: '/manage',
+      component: Manage
     }
   ],
   //路由行为配置项
